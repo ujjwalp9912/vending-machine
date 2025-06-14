@@ -33,7 +33,7 @@ public class SelectionState extends MachineState {
             if (moneyPaidByUser > itemPrice) {
                 getChange(moneyPaidByUser - itemPrice);
             }
-            vendingMachine.setMachineState(new DispenseState(vendingMachine, productCode));
+            vendingMachine.setMachineState(new DispenseState(vendingMachine, item));
         }
     }
 
