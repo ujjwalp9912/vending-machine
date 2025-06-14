@@ -33,12 +33,20 @@ public class Inventory {
         }
     }
 
+    public void updateSoldItem(int codeNumber) {
+        for (ItemShelf itemShelf : inventory) {
+            if (itemShelf.getCode() == codeNumber) {
+                itemShelf.setSoldOut(true);
+                itemShelf.setItem(null);
+                return;
+            }
+        }
+    }
+
     public Item getItem(int codeNumber) {
         for (ItemShelf itemShelf : inventory) {
             if (itemShelf.getCode() == codeNumber) {
                 if (!itemShelf.isSoldOut()) {
-                    itemShelf.setSoldOut(true);
-                    itemShelf.setItem(null);
                     return itemShelf.getItem();
                 } else {
                     System.out.println("Item sold out");

@@ -40,6 +40,7 @@ public class Main {
     private static void displayInventory(VendingMachine vendingMachine) {
         ItemShelf[] slots = vendingMachine.getInventory().getInventory();
 
+        System.out.println();
         for (ItemShelf slot : slots) {
             Item item = slot.getItem();
             String itemName = null == item ? "Vacant" : item.getItemType().name();
@@ -49,6 +50,7 @@ public class Main {
                     + " :: Item Price : " + itemPrice
                     + " :: Availability : " + !slot.isSoldOut());
         }
+        System.out.println();
     }
 
     private static void fillUpInventory(VendingMachine vendingMachine) {

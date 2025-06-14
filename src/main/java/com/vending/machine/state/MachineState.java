@@ -29,7 +29,7 @@ public abstract class MachineState {
         return 0;
     }
 
-    public Item dispenseProduct(VendingMachine vendingMachine, Item item) {
+    public Item dispenseProduct(VendingMachine vendingMachine, int productCode, Item item) {
         System.out.println("Invalid operation in this state");
         return null;
     }
